@@ -4,7 +4,7 @@
 /// GLM is a header only library. There is nothing to compile. 
 /// dummy.cpp exist only a wordaround for CMake file.
 
-/*
+
 #define GLM_MESSAGES
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
@@ -121,7 +121,7 @@ struct intersection
 	glm::vec4 position;
 	glm::vec3 normal;
 };
-*/
+
 
 
 /*
@@ -165,9 +165,13 @@ glm::vec3 lighting
 }
 */
 
-/*
+#include <glm/fwd.hpp>
+#include <glm/gtx/dual_quaternion.hpp>
+#include <glm/gtc/vec1.hpp>
+
+
 template<typename T, glm::precision P, template<typename, glm::precision> class vecType>
-T normalizeDotA(vecType<L, T, P> const & x, vecType<L, T, P> const & y)
+T normalizeDotA(vecType< T, P> const & x, vecType<T, P> const & y)
 {
 	return glm::dot(x, y) * glm::inversesqrt(glm::dot(x, x) * glm::dot(y, y));
 }
@@ -175,7 +179,7 @@ T normalizeDotA(vecType<L, T, P> const & x, vecType<L, T, P> const & y)
 #define GLM_TEMPLATE_GENTYPE typename T, glm::precision P, template<typename, glm::precision> class
 
 template<GLM_TEMPLATE_GENTYPE vecType>
-T normalizeDotB(vecType<L, T, P> const & x, vecType<L, T, P> const & y)
+T normalizeDotB(vecType<T, P> const & x, vecType<T, P> const & y)
 {
 	return glm::dot(x, y) * glm::inversesqrt(glm::dot(x, x) * glm::dot(y, y));
 }
@@ -185,23 +189,27 @@ typename vecType::value_type normalizeDotC(vecType const & a, vecType const & b)
 {
 	return glm::dot(a, b) * glm::inversesqrt(glm::dot(a, a) * glm::dot(b, b));
 }
-*/
+
+
 int main()
 {
-/*
+
 	glm::vec1 o(1);
 	glm::vec2 a(1);
 	glm::vec3 b(1);
 	glm::vec4 c(1);
+	int i = 0;
+
+	glm::vec3 d = computeNormal( b, b, b );
 
 	glm::quat q;
 	glm::dualquat p;
 
 	glm::mat4 m(1);
 
-	float a0 = normalizeDotA(a, a);
-	float b0 = normalizeDotB(b, b);
-	float c0 = normalizeDotC(c, c);
-*/
+//	float a0 = normalizeDotA(a, a);
+//	float b0 = normalizeDotB(b, b);
+//	float c0 = normalizeDotC(c, c);
+
 	return 0;
 }

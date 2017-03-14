@@ -15,6 +15,7 @@ include(CMakePackageConfigHelpers)
 enable_testing()
 
 add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+add_definitions(-DGLM_ENABLE_EXPERIMENTAL)
 
 option(GLM_STATIC_LIBRARY_ENABLE "GLM static library" OFF)
 if(GLM_STATIC_LIBRARY_ENABLE)

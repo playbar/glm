@@ -52,3 +52,6 @@ Makefile
 # local build(s)
 build*
 
+.idea/
+.gitignore
+cmake-build-debug/
